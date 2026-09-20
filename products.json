@@ -1,0 +1,673 @@
+[
+  {
+    "id": "prod-1",
+    "slug": "desi-wheat-atta",
+    "name": "Avaiya Farm Pure Wheat Atta",
+    "hindiName": "जैविक गेहूं का आटा (Chakki Fresh)",
+    "category": "desi-flours",
+    "price": 299,
+    "mrp": 360,
+    "unit": "1 kg",
+    "variants": [
+      {
+        "size": "1 kg",
+        "price": 299,
+        "mrp": 360
+      },
+      {
+        "size": "2 kg",
+        "price": 579,
+        "mrp": 700
+      },
+      {
+        "size": "5 kg",
+        "price": 1399,
+        "mrp": 1700
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 128,
+    "badge": "100% Pure",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDH8SkoxZBceDfYiZsdbH6tPlIh8dPl2CljtucrjWhqS0Yp4rW7DAxmtkcOYoTJh4dgu7SLWB1YJOPkZp3jhw2KhGXPD2ZkV3NUyFP3ulLmmlFM2_Mr82tUsnh_fA-SjzJK_jFzSYk13ptGoZqKvrA2uam19R-ZTLr9UN1-HB3ArEptdksMnQLpk4vF6Jc04Od3_IGN4J1wfqewIyCRGIXFkB907OShYa0z2-T4_lHdWRrfPITL18XGeA",
+    "shortDescription": "Traditional stone-chakki slow milled to preserve natural germ fiber and wheat aroma.",
+    "description": "Our Desi Wheat Atta is sourced from heirloom Kathiya and Sharbati grains grown exclusively in Gir forest eco-soils. Grinded on traditional riverbed stones at under 40 RPM, keeping grain temperature cool and all essential B-vitamins, dietary fiber, and natural wheat germ oils intact. Produces exceptionally soft, sweet rotis naturally.",
+    "harvestDate": "September 2026 Batch",
+    "origin": "Avaiya Farmlands, Gir Somnath, Gujarat",
+    "millingMethod": "Slow Vedic Stone Chakki (<40 RPM)",
+    "certifications": [
+      "NPOP Certified",
+      "Jaivik Bharat",
+      "FSSAI Verified"
+    ],
+    "nutrition": {
+      "servingSize": "100g",
+      "energy": "364 kcal",
+      "protein": "12.8g",
+      "dietaryFiber": "11.2g",
+      "carbohydrates": "71.5g",
+      "fat": "2.1g"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Bestseller",
+      "High Fiber",
+      "Chemical Free",
+      "Stone Ground"
+    ]
+  },
+  {
+    "id": "prod-2",
+    "slug": "fresh-sun-dried-turmeric",
+    "name": "Fresh Sun-Dried Turmeric Powder",
+    "hindiName": "शुद्ध धूप में सुखाया हल्दी पाउडर",
+    "category": "vedic-spices",
+    "price": 299,
+    "mrp": 380,
+    "unit": "500g",
+    "variants": [
+      {
+        "size": "250g",
+        "price": 169,
+        "mrp": 210
+      },
+      {
+        "size": "500g",
+        "price": 299,
+        "mrp": 380
+      },
+      {
+        "size": "1 kg",
+        "price": 549,
+        "mrp": 720
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 94,
+    "badge": "High Curcumin",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCLfbiX7Gyzziti2wrlG9kiXnY6jSsW78AhXijpV6N24HZWmTpGMrfSi9o3-R4qTSSUW2cXC_y8cXrpN28SPkntavNfNdxl0GHjL8brlHGGKzrOQWd1oFmyMhoGPgZrqJZCqluVxG-4gO5jPwFFKU6e6cN5NNsoLAdXcmlyDWFjSWvwBQFexaNr5E0Me0G5xX0MG1fQNaN0grLWJjKlfy6vwSR1VdPMfS9z6wpjs-n_s-YTzAcUjMGfIw",
+    "shortDescription": "High-curcumin sun-dried Salem rhizomes, stone-pulverized with no lead or filler coloring.",
+    "description": "Avaiya Farm Turmeric is cultivated naturally without synthetic fertilizers and sun-cured naturally on cotton beds under open Gujarat sunlight. Contains an independently lab-tested 5.8% natural active Curcumin level, delivering potent anti-inflammatory immunity and a vibrant golden warmth without any artificial polish.",
+    "harvestDate": "August 2026 Harvest",
+    "origin": "Avaiya Farm spice plots, Gujarat",
+    "millingMethod": "Low-temperature wooden pounding",
+    "certifications": [
+      "100% Pesticide Free",
+      "Lab Tested Curcumin >5.5%",
+      "Zero Adulteration"
+    ],
+    "nutrition": {
+      "servingSize": "10g",
+      "energy": "35 kcal",
+      "curcumin": "580mg",
+      "protein": "0.8g",
+      "iron": "4.1mg"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Immunity",
+      "High Curcumin",
+      "Sun Dried"
+    ]
+  },
+  {
+    "id": "prod-3",
+    "slug": "hand-pounded-desi-atta",
+    "name": "Hand-Pounded Desi Kathiya Atta",
+    "hindiName": "हाथ से कुटा काठिया गेहूं का आटा",
+    "category": "desi-flours",
+    "price": 299,
+    "mrp": 370,
+    "unit": "1 kg",
+    "variants": [
+      {
+        "size": "1 kg",
+        "price": 299,
+        "mrp": 370
+      },
+      {
+        "size": "2 kg",
+        "price": 589,
+        "mrp": 720
+      },
+      {
+        "size": "5 kg",
+        "price": 1420,
+        "mrp": 1750
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 112,
+    "badge": "100% Pure",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCW1Zu4AHsC5ACR_GU2AQY-MkygvYF20Huysz4bRvP_-nMjbw7AHPgxYf6rje9-VyCMRTQbsPbWogA90CCga0s9FMEjw5t37cFazxP14EJA6VrARabRdiEuEMp74D2lXrDqk0qF_h0kTaw3iRy5Rjg73I8e7Tiid_fU-d32qDsgaN7nONF80d2lKS9OXUBOH_5vJ3E7nbqCtoasZIHMMkAWTtXjxAUkLGAArJPvBkyeJsu-XkwXIL_Vig",
+    "shortDescription": "Nutrient-dense coarse fiber from indigenous heirloom wheat, ideal for soft digestive rotis.",
+    "description": "Indigenous ancient Kathiya wheat hand-crushed coarsely to retain 100% coarse dietary bran. Rich in complex carbs, gut-friendly prebiotics, and natural magnesium. Favored by diabetic and health-conscious families for its low glycemic index.",
+    "harvestDate": "September 2026 Fresh Batch",
+    "origin": "Saurashtra / Gir Belt, Gujarat",
+    "millingMethod": "Traditional Hand Pestle & Mortar Crushed",
+    "certifications": [
+      "Ancient Heirloom",
+      "Unbleached",
+      "No Maida Mix"
+    ],
+    "nutrition": {
+      "servingSize": "100g",
+      "energy": "358 kcal",
+      "protein": "13.4g",
+      "dietaryFiber": "13.8g",
+      "iron": "3.8mg"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Heirloom",
+      "Low GI",
+      "Gut Friendly"
+    ]
+  },
+  {
+    "id": "prod-4",
+    "slug": "cold-pressed-mustard-oil",
+    "name": "Wood Kolhu Cold-Pressed Mustard Oil",
+    "hindiName": "लकड़ी कोल्हू कच्ची घानी सरसों का तेल",
+    "category": "cold-pressed-oils",
+    "price": 299,
+    "mrp": 390,
+    "unit": "500ml",
+    "variants": [
+      {
+        "size": "500ml",
+        "price": 299,
+        "mrp": 390
+      },
+      {
+        "size": "1 Litre",
+        "price": 549,
+        "mrp": 720
+      },
+      {
+        "size": "5 Litre Tin",
+        "price": 2499,
+        "mrp": 3200
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 215,
+    "badge": "Kachi Ghani",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9yPY9cQc_-NOwUOr0-KHZrlRA6LQjqrqB2Us6qwvRHojtGFwim-pPpubOnrjmOhpEfHuKmHuMm579rqLn321daMVxyVWdIp6iW-mZonomEvW54oBm3rvyXrAHuGEL0JJ6GW1pBCCqpLiYeqahCLYfqs5ZpYmmlBQLrjoYbWdyJCqa0cQzzpsahWxN7jKXJrJ3m9m8O1WJQrvTzhFgEH9br4gRYAXEMRLOXpAZMAHEy-OwRtj3D9GbIg",
+    "shortDescription": "Slow wooden kolhu extracted virgin oil, pungent, non-refined and naturally pure.",
+    "description": "Extracted from black and yellow farm mustard seeds using traditional slow-moving wooden marachekku kolhu. No heat, solvents, or chemicals are used. The oil retains its natural pungent aroma, natural antioxidants, and ideal Omega-3 to Omega-6 ratio for healthy heart cooking.",
+    "harvestDate": "September 2026 Fresh Crush",
+    "origin": "Avaiya Agro Estate, Gujarat",
+    "millingMethod": "Cold Wooden Press (<35°C Extraction)",
+    "certifications": [
+      "100% Pure Virgin",
+      "Zero Hexane",
+      "Raw & Unfiltered"
+    ],
+    "nutrition": {
+      "servingSize": "15ml",
+      "energy": "120 kcal",
+      "mufa": "60%",
+      "pufa": "21%",
+      "transFat": "0g",
+      "omega3": "1.2g"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Virgin Oil",
+      "Kachi Ghani",
+      "Heart Healthy"
+    ]
+  },
+  {
+    "id": "prod-5",
+    "slug": "a2-gir-cow-bilona-ghee",
+    "name": "Vedic A2 Desi Gir Cow Cultured Bilona Ghee",
+    "hindiName": "वैदिक A2 गिर गाय बिलोना घी",
+    "category": "desi-ghee-honey",
+    "price": 849,
+    "mrp": 1050,
+    "unit": "500ml",
+    "variants": [
+      {
+        "size": "250ml",
+        "price": 469,
+        "mrp": 580
+      },
+      {
+        "size": "500ml",
+        "price": 849,
+        "mrp": 1050
+      },
+      {
+        "size": "1 Litre Glass Jar",
+        "price": 1649,
+        "mrp": 1999
+      }
+    ],
+    "rating": 5,
+    "reviewsCount": 340,
+    "badge": "Bilona Method",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCLfbiX7Gyzziti2wrlG9kiXnY6jSsW78AhXijpV6N24HZWmTpGMrfSi9o3-R4qTSSUW2cXC_y8cXrpN28SPkntavNfNdxl0GHjL8brlHGGKzrOQWd1oFmyMhoGPgZrqJZCqluVxG-4gO5jPwFFKU6e6cN5NNsoLAdXcmlyDWFjSWvwBQFexaNr5E0Me0G5xX0MG1fQNaN0grLWJjKlfy6vwSR1VdPMfS9z6wpjs-n_s-YTzAcUjMGfIw",
+    "shortDescription": "Traditional curd-churned golden Danedar ghee from free-grazing indigenous Gir cows.",
+    "description": "Prepared strictly following the ancient Vedic 5-step Bilona method: Grass-fed A2 Gir cow milk is boiled, set into whole curd in clay pots, churned with wooden bi-directional bilona, and slow-simmered on cow-dung cake flame. Rich golden aroma and grainy (Danedar) consistency with natural vitamins A, D, E, K2 and butyric acid.",
+    "harvestDate": "Fresh Weekly Batch",
+    "origin": "Avaiya Gaushala, Gir Eco-Belt",
+    "millingMethod": "Wood Bilona Curd Churned",
+    "certifications": [
+      "100% A2 Beta-Casein",
+      "Grass-Fed Gir Cows",
+      "Zero Preservatives"
+    ],
+    "nutrition": {
+      "servingSize": "10g",
+      "energy": "90 kcal",
+      "a2Protein": "Pure",
+      "butyricAcid": "High",
+      "transFat": "0g"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Vedic Bilona",
+      "A2 Certified",
+      "Immunity Booster"
+    ]
+  },
+  {
+    "id": "prod-6",
+    "slug": "unpolished-chana-dal",
+    "name": "Farm Desi Brown Chana & Sattu Flour",
+    "hindiName": "देसी चना व भुना सत्तू",
+    "category": "desi-flours",
+    "price": 249,
+    "mrp": 310,
+    "unit": "1 kg",
+    "variants": [
+      {
+        "size": "1 kg",
+        "price": 249,
+        "mrp": 310
+      },
+      {
+        "size": "2 kg",
+        "price": 479,
+        "mrp": 600
+      }
+    ],
+    "rating": 4.8,
+    "reviewsCount": 83,
+    "badge": "Unpolished",
+    "badgeColor": "secondary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCW1Zu4AHsC5ACR_GU2AQY-MkygvYF20Huysz4bRvP_-nMjbw7AHPgxYf6rje9-VyCMRTQbsPbWogA90CCga0s9FMEjw5t37cFazxP14EJA6VrARabRdiEuEMp74D2lXrDqk0qF_h0kTaw3iRy5Rjg73I8e7Tiid_fU-d32qDsgaN7nONF80d2lKS9OXUBOH_5vJ3E7nbqCtoasZIHMMkAWTtXjxAUkLGAArJPvBkyeJsu-XkwXIL_Vig",
+    "shortDescription": "Naturally roasted on sand kilns, stone pulverized into high-protein cooling Sattu.",
+    "description": "Cultivated without synthetic pesticides and roasted traditionally on heated sand beds. Stone pulverized whole with the outer bran to create high-protein, natural electrolyte drink powder and wholesome cooking flour.",
+    "harvestDate": "August 2026 Batch",
+    "origin": "Avaiya Farm, Gujarat",
+    "millingMethod": "Roasted Sand Kiln + Cold Stone Grind",
+    "certifications": [
+      "High Plant Protein",
+      "100% Natural",
+      "No Food Color"
+    ],
+    "nutrition": {
+      "servingSize": "100g",
+      "energy": "382 kcal",
+      "protein": "21.6g",
+      "dietaryFiber": "16.8g",
+      "fat": "5.2g"
+    },
+    "inStock": true,
+    "featured": false,
+    "tags": [
+      "Protein Rich",
+      "High Fiber",
+      "Sattu"
+    ]
+  },
+  {
+    "id": "prod-7",
+    "slug": "cold-pressed-groundnut-oil",
+    "name": "Wood-Pressed Saurashtra Groundnut Oil",
+    "hindiName": "सौराष्ट्र मूंगफली का शुद्ध तेल",
+    "category": "cold-pressed-oils",
+    "price": 319,
+    "mrp": 420,
+    "unit": "1 Litre",
+    "variants": [
+      {
+        "size": "1 Litre",
+        "price": 319,
+        "mrp": 420
+      },
+      {
+        "size": "5 Litre Can",
+        "price": 1499,
+        "mrp": 1950
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 164,
+    "badge": "Single Estate",
+    "badgeColor": "secondary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9yPY9cQc_-NOwUOr0-KHZrlRA6LQjqrqB2Us6qwvRHojtGFwim-pPpubOnrjmOhpEfHuKmHuMm579rqLn321daMVxyVWdIp6iW-mZonomEvW54oBm3rvyXrAHuGEL0JJ6GW1pBCCqpLiYeqahCLYfqs5ZpYmmlBQLrjoYbWdyJCqa0cQzzpsahWxN7jKXJrJ3m9m8O1WJQrvTzhFgEH9br4gRYAXEMRLOXpAZMAHEy-OwRtj3D9GbIg",
+    "shortDescription": "Sweet nutty flavor extracted from premium Saurashtra groundnuts in slow wooden ghani.",
+    "description": "Authentic Gujarat Saurashtra TT groundnuts sun-dried and pressed in wooden vats without excessive heat friction. Perfect smoke point for daily Indian curries, tadka, and deep frying while delivering natural vitamin E and plant sterols.",
+    "harvestDate": "September 2026 Batch",
+    "origin": "Saurashtra Red Soil Fields, Gujarat",
+    "millingMethod": "Traditional Wooden Marachekku",
+    "certifications": [
+      "Zero Trans Fat",
+      "Non-GMO Seeds",
+      "Naturally Filtered"
+    ],
+    "nutrition": {
+      "servingSize": "15ml",
+      "energy": "125 kcal",
+      "vitaminE": "3.5mg",
+      "mufa": "49%",
+      "pufa": "32%"
+    },
+    "inStock": true,
+    "featured": false,
+    "tags": [
+      "Sweet Nutty",
+      "High Smoke Point",
+      "Vitamin E"
+    ]
+  },
+  {
+    "id": "prod-8",
+    "slug": "raw-wild-forest-honey",
+    "name": "Raw Wild Multi-Flora Forest Honey",
+    "hindiName": "कच्चा जंगली प्राकृतिक शहद",
+    "category": "desi-ghee-honey",
+    "price": 399,
+    "mrp": 520,
+    "unit": "500g",
+    "variants": [
+      {
+        "size": "250g",
+        "price": 220,
+        "mrp": 290
+      },
+      {
+        "size": "500g",
+        "price": 399,
+        "mrp": 520
+      },
+      {
+        "size": "1 kg Glass Jar",
+        "price": 749,
+        "mrp": 980
+      }
+    ],
+    "rating": 5,
+    "reviewsCount": 188,
+    "badge": "Unpasteurized",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCLfbiX7Gyzziti2wrlG9kiXnY6jSsW78AhXijpV6N24HZWmTpGMrfSi9o3-R4qTSSUW2cXC_y8cXrpN28SPkntavNfNdxl0GHjL8brlHGGKzrOQWd1oFmyMhoGPgZrqJZCqluVxG-4gO5jPwFFKU6e6cN5NNsoLAdXcmlyDWFjSWvwBQFexaNr5E0Me0G5xX0MG1fQNaN0grLWJjKlfy6vwSR1VdPMfS9z6wpjs-n_s-YTzAcUjMGfIw",
+    "shortDescription": "Naturally gathered wild honey from Gir forest flowering herbs, zero sugar syrup adulteration.",
+    "description": "Ethically harvested from wild bee colonies in the pristine flora of Gir forest. It is gravity-strained through cotton cloth without any micro-heating or pasteurization, preserving raw pollen grains, living enzymes, and therapeutic antimicrobial qualities.",
+    "harvestDate": "Monsoon Bloom 2026",
+    "origin": "Gir Forest Wild Flora Reserve, Gujarat",
+    "millingMethod": "Cold Raw Gravity Strained",
+    "certifications": [
+      "Zero Added Sugar (C4/C3 C13 Tested)",
+      "Raw & Live Enzymes",
+      "Wild Harvest"
+    ],
+    "nutrition": {
+      "servingSize": "20g",
+      "energy": "64 kcal",
+      "naturalSugars": "16g",
+      "pollenContent": "Rich",
+      "antioxidants": "High"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Raw Honey",
+      "Wild Flora",
+      "Immunity"
+    ]
+  },
+  {
+    "id": "prod-9",
+    "slug": "desi-jaggery-gud",
+    "name": "Avaiya Farm Vedic Desi Jaggery (Gur)",
+    "hindiName": "शुद्ध जैविक देसी गुड़ (केमिकल-मुक्त)",
+    "category": "desi-ghee-honey",
+    "price": 179,
+    "mrp": 230,
+    "unit": "500g",
+    "variants": [
+      {
+        "size": "500g",
+        "price": 179,
+        "mrp": 230
+      },
+      {
+        "size": "1 kg",
+        "price": 329,
+        "mrp": 420
+      },
+      {
+        "size": "2 kg",
+        "price": 629,
+        "mrp": 800
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 76,
+    "badge": "Chemical Free",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDH8SkoxZBceDfYiZsdbH6tPlIh8dPl2CljtucrjWhqS0Yp4rW7DAxmtkcOYoTJh4dgu7SLWB1YJOPkZp3jhw2KhGXPD2ZkV3NUyFP3ulLmmlFM2_Mr82tUsnh_fA-SjzJK_jFzSYk13ptGoZqKvrA2uam19R-ZTLr9UN1-HB3ArEptdksMnQLpk4vF6Jc04Od3_IGN4J1wfqewIyCRGIXFkB907OShYa0z2-T4_lHdWRrfPITL18XGeA",
+    "shortDescription": "Traditional iron kadhai clarified with natural okra plant extract, zero sulfur & chemical-free.",
+    "description": "Crafted from pesticide-free Gujarat sugarcane juice slow-simmered in traditional open iron pans. Clarified naturally using natural ladyfinger (okra) stem mucilage instead of chemical sodium hydrosulphite. Rich in natural iron, minerals, and pleasant caramel sweetness for daily tea, sweets, and immunity.",
+    "harvestDate": "September 2026 Fresh Crush",
+    "origin": "Avaiya Farmlands, Gir Somnath, Gujarat",
+    "millingMethod": "Wood-fired open iron pan simmering",
+    "certifications": [
+      "Zero Sulfur (Non-Chemical)",
+      "Natural Plant Clarified",
+      "Rich in Iron"
+    ],
+    "nutrition": {
+      "servingSize": "20g",
+      "energy": "76 kcal",
+      "iron": "2.4mg",
+      "calcium": "16mg",
+      "magnesium": "18mg"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Chemical Free",
+      "Iron Rich",
+      "Natural Sweetener",
+      "Vedic Gud"
+    ]
+  },
+  {
+    "id": "prod-10",
+    "slug": "cold-pressed-black-sesame-oil",
+    "name": "Wood Kolhu Cold-Pressed Pure Black Sesame (Til) Oil",
+    "hindiName": "लकड़ी कोल्हू शुद्ध काला तिल का तेल",
+    "category": "cold-pressed-oils",
+    "price": 349,
+    "mrp": 450,
+    "unit": "500ml",
+    "variants": [
+      {
+        "size": "500ml",
+        "price": 349,
+        "mrp": 450
+      },
+      {
+        "size": "1 Litre",
+        "price": 649,
+        "mrp": 850
+      },
+      {
+        "size": "5 Litre Can",
+        "price": 2999,
+        "mrp": 3900
+      }
+    ],
+    "rating": 5,
+    "reviewsCount": 92,
+    "badge": "Kachi Ghani",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9yPY9cQc_-NOwUOr0-KHZrlRA6LQjqrqB2Us6qwvRHojtGFwim-pPpubOnrjmOhpEfHuKmHuMm579rqLn321daMVxyVWdIp6iW-mZonomEvW54oBm3rvyXrAHuGEL0JJ6GW1pBCCqpLiYeqahCLYfqs5ZpYmmlBQLrjoYbWdyJCqa0cQzzpsahWxN7jKXJrJ3m9m8O1WJQrvTzhFgEH9br4gRYAXEMRLOXpAZMAHEy-OwRtj3D9GbIg",
+    "shortDescription": "Cold wood-pressed indigenous black sesame seeds, rich in sesamol antioxidants and bone calcium.",
+    "description": "Slowly extracted in traditional Marachekku wooden kolhu from indigenous Gir-grown unpolished black sesame seeds. No chemical refining, bleaching, or deodorizing. Renowned in Ayurveda for bone strength, deep nourishment, and aromatic culinary seasoning.",
+    "harvestDate": "September 2026 Fresh Crush",
+    "origin": "Avaiya Agro Belt, Gujarat",
+    "millingMethod": "Cold Wooden Press (<35°C Extraction)",
+    "certifications": [
+      "100% Virgin First Press",
+      "Unrefined & Raw",
+      "Zero Trans Fat"
+    ],
+    "nutrition": {
+      "servingSize": "15ml",
+      "energy": "122 kcal",
+      "sesamol": "High",
+      "calcium": "Rich",
+      "mufa": "42%",
+      "pufa": "44%"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Kachi Ghani",
+      "Black Til",
+      "Ayurvedic",
+      "Bone Health"
+    ]
+  },
+  {
+    "id": "prod-11",
+    "slug": "whole-cumin-seeds",
+    "name": "Gir Somnath Pure Whole Cumin Seeds (Unpolished Jeera)",
+    "hindiName": "शुद्ध सौराष्ट्र जीरा (बिना पॉलिश)",
+    "category": "vedic-spices",
+    "price": 199,
+    "mrp": 260,
+    "unit": "250g",
+    "variants": [
+      {
+        "size": "250g",
+        "price": 199,
+        "mrp": 260
+      },
+      {
+        "size": "500g",
+        "price": 369,
+        "mrp": 490
+      },
+      {
+        "size": "1 kg",
+        "price": 699,
+        "mrp": 920
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 65,
+    "badge": "High Essential Oil",
+    "badgeColor": "secondary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCLfbiX7Gyzziti2wrlG9kiXnY6jSsW78AhXijpV6N24HZWmTpGMrfSi9o3-R4qTSSUW2cXC_y8cXrpN28SPkntavNfNdxl0GHjL8brlHGGKzrOQWd1oFmyMhoGPgZrqJZCqluVxG-4gO5jPwFFKU6e6cN5NNsoLAdXcmlyDWFjSWvwBQFexaNr5E0Me0G5xX0MG1fQNaN0grLWJjKlfy6vwSR1VdPMfS9z6wpjs-n_s-YTzAcUjMGfIw",
+    "shortDescription": "Sun-dried Saurashtra heirloom cumin seeds with high volatile essential oil content.",
+    "description": "Cultivated in fertile alluvial soils of Gir Somnath. Hand cleaned and dried on sunlit cotton sheets with zero artificial oil or slate powder polishing. Features robust aroma, rich thymol, and sharp earthy flavor for wholesome daily tadka and digestive wellness.",
+    "harvestDate": "August 2026 Harvest",
+    "origin": "Avaiya Spice Plots, Saurashtra, Gujarat",
+    "millingMethod": "Hand-cleaned & Sun-dried",
+    "certifications": [
+      "Unpolished",
+      "High Volatile Oil >3.8%",
+      "100% Pesticide Free"
+    ],
+    "nutrition": {
+      "servingSize": "10g",
+      "energy": "37 kcal",
+      "iron": "6.6mg",
+      "protein": "1.8g",
+      "dietaryFiber": "1.1g"
+    },
+    "inStock": true,
+    "featured": false,
+    "tags": [
+      "Unpolished Jeera",
+      "Digestive",
+      "High Aroma",
+      "Farm Fresh"
+    ]
+  },
+  {
+    "id": "prod-12",
+    "slug": "stone-ground-desi-bajra-flour",
+    "name": "Stone-Ground Heirloom Pearl Millet (Desi Bajra) Flour",
+    "hindiName": "देसी बाजरा का आटा (Chakki Fresh)",
+    "category": "desi-flours",
+    "price": 189,
+    "mrp": 240,
+    "unit": "1 kg",
+    "variants": [
+      {
+        "size": "1 kg",
+        "price": 189,
+        "mrp": 240
+      },
+      {
+        "size": "2 kg",
+        "price": 359,
+        "mrp": 460
+      },
+      {
+        "size": "5 kg",
+        "price": 849,
+        "mrp": 1100
+      }
+    ],
+    "rating": 4.9,
+    "reviewsCount": 89,
+    "badge": "Gluten-Free",
+    "badgeColor": "tertiary",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCW1Zu4AHsC5ACR_GU2AQY-MkygvYF20Huysz4bRvP_-nMjbw7AHPgxYf6rje9-VyCMRTQbsPbWogA90CCga0s9FMEjw5t37cFazxP14EJA6VrARabRdiEuEMp74D2lXrDqk0qF_h0kTaw3iRy5Rjg73I8e7Tiid_fU-d32qDsgaN7nONF80d2lKS9OXUBOH_5vJ3E7nbqCtoasZIHMMkAWTtXjxAUkLGAArJPvBkyeJsu-XkwXIL_Vig",
+    "shortDescription": "Naturally gluten-free stone-milled indigenous Gujarat Bajra, perfect for authentic soft rotlas.",
+    "description": "Indigenous Saurashtra Bajra slow-ground on heavy natural stone chakki at cool temperatures to prevent nutrient degradation. Packed with dietary fiber, iron, phosphorus, and essential amino acids. Ideal for traditional Gujarat Kathiyawadi rotlas enjoyed with A2 Gir cow ghee and jaggery.",
+    "harvestDate": "September 2026 Batch",
+    "origin": "Avaiya Farm, Saurashtra, Gujarat",
+    "millingMethod": "Low-RPM Natural Stone Chakki",
+    "certifications": [
+      "100% Gluten-Free",
+      "Ancient Grain",
+      "Zero Bleach or Preservatives"
+    ],
+    "nutrition": {
+      "servingSize": "100g",
+      "energy": "378 kcal",
+      "protein": "11.6g",
+      "dietaryFiber": "11.5g",
+      "iron": "8.0mg",
+      "magnesium": "137mg"
+    },
+    "inStock": true,
+    "featured": true,
+    "tags": [
+      "Gluten Free",
+      "Ancient Bajra",
+      "Iron Rich",
+      "Winter Superfood"
+    ]
+  }
+]
