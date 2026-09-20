@@ -1,0 +1,42 @@
+[
+  {
+    "orderId": "AF-552995",
+    "createdAt": "2026-09-20T16:25:52.996Z",
+    "type": "single",
+    "items": [
+      {
+        "productId": "prod-12",
+        "name": "Stone-Ground Heirloom Pearl Millet (Desi Bajra) Flour",
+        "size": "1 kg",
+        "price": 189,
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 189,
+    "whatsAppNumber": "918469826209"
+  },
+  {
+    "orderId": "AF-497214",
+    "createdAt": "2026-09-20T16:24:57.215Z",
+    "type": "cart",
+    "items": [
+      {
+        "productId": "prod-2",
+        "name": "Fresh Sun-Dried Turmeric Powder",
+        "size": "250g",
+        "price": 169,
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 169,
+    "customer": {
+      "name": "",
+      "phone": "",
+      "address": "",
+      "city": "",
+      "pincode": "",
+      "notes": ""
+    },
+    "whatsAppNumber": "918469826209"
+  }
+]
