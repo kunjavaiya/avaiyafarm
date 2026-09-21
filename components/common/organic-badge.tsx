@@ -1,4 +1,6 @@
 import React from "react"
+import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 
 interface OrganicBadgeProps {
   text: string
@@ -7,7 +9,7 @@ interface OrganicBadgeProps {
 }
 
 export function OrganicBadge({ text, variant = "amber", className = "" }: OrganicBadgeProps) {
-  const getStyle = () => {
+  const getVariantStyles = () => {
     switch (variant) {
       case "amber":
       case "tertiary":
@@ -23,10 +25,16 @@ export function OrganicBadge({ text, variant = "amber", className = "" }: Organi
   }
 
   return (
-    <span
-      className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase border shadow-xs transition-colors ${getStyle()} ${className}`}
+    <Badge
+      variant="outline"
+      className={cn(
+        "rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase shadow-xs transition-colors",
+        getVariantStyles(),
+        className
+      )}
     >
       {text}
-    </span>
+    </Badge>
   )
 }
+

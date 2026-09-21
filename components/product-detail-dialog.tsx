@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
-import { X, Plus, Minus, ShoppingBag, MessageCircle, ShieldCheck, MapPin, Calendar, Activity } from "lucide-react"
+import { Plus, Minus, ShoppingBag, MessageCircle, ShieldCheck, MapPin, Calendar, Activity } from "lucide-react"
 import { Product, ProductVariant } from "@/types/product"
 import { useCart } from "@/lib/cart-context"
 import { OrganicBadge } from "@/components/common/organic-badge"
@@ -10,6 +10,15 @@ import { StarRating } from "@/components/common/star-rating"
 import { PriceDisplay } from "@/components/common/price-display"
 import { createSingleProductWhatsAppOrderAction } from "@/app/actions/orders"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog"
 
 interface ProductDetailDialogProps {
   product: Product | null
@@ -19,16 +28,22 @@ interface ProductDetailDialogProps {
 export function ProductDetailDialog({ product, onClose }: ProductDetailDialogProps) {
   const { addItem, items, updateQuantity } = useCart()
 
-  const [selectedVariant, setSelectedVariant] = useState<ProductVariant>(
-    product?.variants?.[0] || {
-      size: product?.unit || "1 pc",
-      price: product?.price || 0,
-      mrp: product?.mrp || 0,
-    }
-  )
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null)
   const [isOrderingWhatsApp, setIsOrderingWhatsApp] = useState(false)
 
-  if (!product) return null
+  useEffect(() => {
+    if (product) {
+      setSelectedVariant(
+        product.variants?.[0] || {
+          size: product.unit || "1 pc",
+          price: product.price || 0,
+          mrp: product.mrp || 0,
+        }
+      )
+    }
+  }, [product])
+
+  if (!product || !selectedVariant) return null
 
   const cartItemId = `${product.id}-${selectedVariant.size}`
   const existingCartItem = items.find((i) => i.id === cartItemId)
@@ -57,32 +72,27 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
   }
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
-      onClick={onClose}
+    <Dialog
+      open={!!product}
+      onOpenChange={(open) => {
+        if (!open) onClose()
+      }}
     >
-      <div
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-card text-card-foreground rounded-2xl border border-border shadow-2xl p-6 sm:p-8"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Close Button */}
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Close dialog"
-        >
-          <X className="size-5" />
-        </button>
+      <DialogContent className="w-[95vw] sm:w-[92vw] md:w-[88vw] lg:w-full sm:max-w-3xl lg:max-w-4xl max-h-[92vh] overflow-y-auto overflow-x-hidden p-4 sm:p-6 md:p-8 bg-card text-card-foreground rounded-2xl border-border shadow-2xl">
+        <DialogHeader className="sr-only">
+          <DialogTitle>{product.name}</DialogTitle>
+          <DialogDescription>{product.shortDescription}</DialogDescription>
+        </DialogHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-start pt-1">
           {/* Media Column */}
-          <div className="md:col-span-5 flex flex-col gap-3">
-            <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-muted border border-border/80">
+          <div className="md:col-span-5 flex flex-col gap-3 w-full max-w-md md:max-w-none mx-auto md:mx-0">
+            <div className="relative aspect-square w-full rounded-xl sm:rounded-2xl overflow-hidden bg-muted border border-border/80">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
+                sizes="(max-width: 768px) 90vw, 400px"
                 className="object-cover"
               />
               <div className="absolute top-3 left-3">
@@ -117,21 +127,21 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
           </div>
 
           {/* Details Column */}
-          <div className="md:col-span-7 flex flex-col gap-4">
+          <div className="md:col-span-7 flex flex-col gap-3.5 sm:gap-4 w-full min-w-0">
             <div>
               <StarRating rating={product.rating} reviewsCount={product.reviewsCount} />
-              <h2 className="text-2xl font-bold tracking-tight text-foreground mt-1 font-heading">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-1 font-heading leading-tight">
                 {product.name}
               </h2>
               {product.hindiName && (
-                <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-400">
+                <p className="text-xs sm:text-sm font-semibold text-emerald-800 dark:text-emerald-400 mt-0.5">
                   {product.hindiName}
                 </p>
               )}
             </div>
 
             {/* Full description */}
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               {product.description || product.shortDescription}
             </p>
 
@@ -139,39 +149,42 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
             {product.certifications && product.certifications.length > 0 && (
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {product.certifications.map((c, idx) => (
-                  <span
+                  <Badge
                     key={idx}
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/80"
+                    variant="outline"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/80"
                   >
                     <ShieldCheck className="size-3" />
-                    {c}
-                  </span>
+                    <span>{c}</span>
+                  </Badge>
                 ))}
               </div>
             )}
 
             {/* Variant / Size Selection */}
             {product.variants && product.variants.length > 0 && (
-              <div className="flex flex-col gap-2 pt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              <div className="flex flex-col gap-2 pt-1">
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Select Pack Size:
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {product.variants.map((v) => {
                     const isSelected = selectedVariant.size === v.size
                     return (
-                      <button
+                      <Button
                         key={v.size}
                         type="button"
+                        size="sm"
+                        variant={isSelected ? "default" : "outline"}
                         onClick={() => setSelectedVariant(v)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                        className={`text-xs font-bold transition-all h-8 px-3 ${
                           isSelected
-                            ? "bg-primary text-primary-foreground border-primary shadow-xs"
+                            ? "bg-[#00703c] hover:bg-emerald-800 text-white shadow-xs"
                             : "bg-muted/40 text-foreground hover:bg-muted border-border"
                         }`}
                       >
                         {v.size} — ₹{v.price}
-                      </button>
+                      </Button>
                     )
                   })}
                 </div>
@@ -180,8 +193,9 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
 
             {/* Nutrition facts snippet if available */}
             {product.nutrition && (
-              <div className="pt-2 border-t border-border/80">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-2">
+              <div className="pt-2">
+                <Separator className="mb-3" />
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-2">
                   Nutritional Values (per {product.nutrition.servingSize || "100g"}):
                 </span>
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 text-center text-xs">
@@ -203,8 +217,10 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
               </div>
             )}
 
+            <Separator className="my-1" />
+
             {/* Price & Actions */}
-            <div className="pt-4 border-t border-border flex flex-wrap items-center justify-between gap-3 mt-auto">
+            <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-auto">
               <PriceDisplay
                 price={selectedVariant.price}
                 mrp={selectedVariant.mrp}
@@ -212,33 +228,39 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
                 size="lg"
               />
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
                 {inCartQty > 0 ? (
                   <div className="flex items-center rounded-lg border border-primary/40 bg-secondary/50 p-1">
-                    <button
+                    <Button
                       type="button"
+                      variant="ghost"
+                      size="icon-sm"
                       onClick={() => updateQuantity(cartItemId, inCartQty - 1)}
-                      className="size-8 flex items-center justify-center rounded-md hover:bg-background text-foreground"
+                      className="size-8 rounded-md hover:bg-background text-foreground p-0"
+                      aria-label="Decrease quantity"
                     >
                       <Minus className="size-4" />
-                    </button>
+                    </Button>
                     <span className="w-8 text-center text-sm font-bold text-foreground">
                       {inCartQty}
                     </span>
-                    <button
+                    <Button
                       type="button"
+                      variant="ghost"
+                      size="icon-sm"
                       onClick={() => updateQuantity(cartItemId, inCartQty + 1)}
-                      className="size-8 flex items-center justify-center rounded-md hover:bg-background text-foreground"
+                      className="size-8 rounded-md hover:bg-background text-foreground p-0"
+                      aria-label="Increase quantity"
                     >
                       <Plus className="size-4" />
-                    </button>
+                    </Button>
                   </div>
                 ) : (
                   <Button
                     type="button"
                     onClick={handleAddToCart}
                     size="default"
-                    className="gap-1.5 font-bold"
+                    className="gap-1.5 font-bold bg-[#00703c] hover:bg-emerald-800 text-white shrink-0"
                   >
                     <ShoppingBag className="size-4" />
                     <span>Add to Cart</span>
@@ -249,7 +271,7 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
                   type="button"
                   onClick={handleWhatsAppOrder}
                   disabled={isOrderingWhatsApp}
-                  className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold gap-1.5"
+                  className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold gap-1.5 shrink-0"
                 >
                   <MessageCircle className="size-4 fill-white" />
                   <span>Order on WhatsApp</span>
@@ -258,7 +280,8 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   )
 }
+

@@ -12,6 +12,8 @@ import {
   Wheat,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
 import { FARM_DISPLAY_PHONE, FARM_WHATSAPP_NUMBER } from "@/lib/whatsapp"
 
 export function HeroSection() {
@@ -33,10 +35,13 @@ export function HeroSection() {
           {/* Left Column: Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-start gap-4 sm:gap-6">
             {/* Top Pill */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-800/90 border border-emerald-600/50 text-emerald-200 text-[11px] sm:text-xs font-semibold backdrop-blur-xs">
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-800/90 border-emerald-600/50 text-emerald-200 text-[11px] sm:text-xs font-semibold backdrop-blur-xs"
+            >
               <Sparkles className="size-3 text-amber-400" />
               <span>100% PURE — ORGANIC DESI HARVEST</span>
-            </div>
+            </Badge>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] font-heading">
@@ -50,18 +55,27 @@ export function HeroSection() {
 
             {/* Feature Pills */}
             <div className="flex flex-wrap gap-2 sm:gap-2.5 text-xs sm:text-sm font-medium">
-              <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/15 text-white">
+              <Badge
+                variant="outline"
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-xs border-white/15 text-white font-medium"
+              >
                 <CheckCircle2 className="size-3.5 sm:size-4 text-emerald-400" />
                 <span>Chemical-Free</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/15 text-white">
+              </Badge>
+              <Badge
+                variant="outline"
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-xs border-white/15 text-white font-medium"
+              >
                 <CheckCircle2 className="size-3.5 sm:size-4 text-emerald-400" />
                 <span>Natural Sun Curing</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/15 text-white">
+              </Badge>
+              <Badge
+                variant="outline"
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-xs border-white/15 text-white font-medium"
+              >
                 <CheckCircle2 className="size-3.5 sm:size-4 text-emerald-400" />
                 <span>Pure Seasonality</span>
-              </div>
+              </Badge>
             </div>
 
             {/* CTA Buttons */}
@@ -69,10 +83,10 @@ export function HeroSection() {
               <Button
                 onClick={scrollToCatalog}
                 size="lg"
-                className="bg-emerald-400 hover:bg-emerald-300 text-emerald-950 font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-md transition-all active:scale-95"
+                className="bg-emerald-400 hover:bg-emerald-300 text-emerald-950 font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-md transition-all active:scale-95 gap-1.5"
               >
                 <span>Shop Harvest</span>
-                <ArrowRight className="size-3.5 sm:size-4 ml-1" />
+                <ArrowRight className="size-3.5 sm:size-4" />
               </Button>
 
               <a
@@ -97,7 +111,7 @@ export function HeroSection() {
 
           {/* Right Column: Visual Feature Card */}
           <div className="lg:col-span-5 relative w-full">
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-emerald-950/80 backdrop-blur-md">
+            <Card className="rounded-2xl sm:rounded-3xl overflow-hidden border-white/20 shadow-xl bg-emerald-950/80 backdrop-blur-md p-0 gap-0">
               {/* Farm Image Banner */}
               <div className="relative aspect-16/10 w-full overflow-hidden">
                 <Image
@@ -109,8 +123,10 @@ export function HeroSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/30 to-transparent" />
 
-                <div className="absolute top-2.5 right-2.5 bg-amber-400 text-amber-950 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-extrabold uppercase shadow-xs">
-                  Heritage Vedic Produce
+                <div className="absolute top-2.5 right-2.5">
+                  <Badge className="bg-amber-400 hover:bg-amber-400 text-amber-950 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-extrabold uppercase shadow-xs border-0">
+                    Heritage Vedic Produce
+                  </Badge>
                 </div>
 
                 <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
@@ -152,10 +168,11 @@ export function HeroSection() {
                 </div>
                 <span className="font-semibold text-white">Guaranteed Purity</span>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>
     </section>
   )
 }
+

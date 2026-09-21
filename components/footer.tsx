@@ -1,14 +1,16 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Phone, MessageCircle, Heart, ShieldCheck, Mail } from "lucide-react"
+import { MapPin, Phone, MessageCircle, ShieldCheck } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
 import { FARM_DISPLAY_PHONE, FARM_WHATSAPP_NUMBER } from "@/lib/whatsapp"
 
 export function Footer() {
   return (
     <footer className="bg-emerald-950 text-emerald-100 border-t border-emerald-900/60 pt-12 sm:pt-16 pb-10 sm:pb-12 w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-900/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12">
           {/* Brand Col */}
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="flex items-center gap-3">
@@ -36,15 +38,20 @@ export function Footer() {
             </p>
 
             <div className="flex flex-col gap-2 pt-1 text-xs text-emerald-300">
-              <div className="flex items-center gap-2">
+              <a
+                href="https://maps.app.goo.gl/AqFZFA1Ccs8mSNqJ9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:underline"
+              >
                 <MapPin className="size-4 text-amber-400 shrink-0" />
                 <span>Avaiya Agro Farmlands, Saurashtra / Gir Somnath, Gujarat</span>
-              </div>
+              </a>
               <a
                 href={`https://wa.me/${FARM_WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-white transition-colors"
+                className="flex items-center gap-2 hover:underline"
               >
                 <Phone className="size-4 text-emerald-400 shrink-0" />
                 <span>{FARM_DISPLAY_PHONE} (WhatsApp & Call)</span>
@@ -117,22 +124,28 @@ export function Footer() {
             <h4 className="font-bold text-sm text-white uppercase tracking-wider">
               Fast Order
             </h4>
-            <div className="p-3.5 rounded-xl bg-emerald-900/60 border border-emerald-800 flex flex-col gap-2.5">
-              <p className="text-xs text-emerald-200">
-                Need customized quantities or immediate dispatch?
-              </p>
-              <a
-                href={`https://wa.me/${FARM_WHATSAPP_NUMBER}?text=${encodeURIComponent("नमस्ते Avaiya Farm! I would like to order produce directly.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold py-2 px-3 rounded-lg text-xs transition-colors shadow-sm"
-              >
-                <MessageCircle className="size-3.5 fill-current" />
-                <span>Chat on WhatsApp</span>
-              </a>
-            </div>
+            <Card className="p-3.5 rounded-xl bg-emerald-900/60 border border-emerald-800 text-card-foreground gap-2.5 py-3.5">
+              <CardContent className="p-0 flex flex-col gap-2.5">
+                <p className="text-xs text-emerald-200">
+                  Need customized quantities or immediate dispatch?
+                </p>
+                <a
+                  href={`https://wa.me/${FARM_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                    "नमस्ते Avaiya Farm! I would like to order produce directly."
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold py-2 px-3 rounded-lg text-xs transition-colors shadow-sm"
+                >
+                  <MessageCircle className="size-3.5 fill-current" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
+
+        <Separator className="bg-emerald-900/80" />
 
         {/* Bottom Strip */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70">
@@ -149,3 +162,4 @@ export function Footer() {
     </footer>
   )
 }
+

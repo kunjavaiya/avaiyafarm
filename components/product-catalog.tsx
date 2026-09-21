@@ -1,12 +1,22 @@
 "use client"
 
 import React, { useState } from "react"
-import { Sparkles, Search, SlidersHorizontal, ChevronDown, PlusCircle } from "lucide-react"
+import { Search, SlidersHorizontal, X } from "lucide-react"
 import { CategoryInfo, Product } from "@/types/product"
 import { useProductsFilter, SortOption } from "@/hooks/use-products-filter"
 import { ProductCard } from "@/components/product-card"
 import { ProductDetailDialog } from "@/components/product-detail-dialog"
-import { FARM_WHATSAPP_NUMBER } from "@/lib/whatsapp"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator"
 
 interface ProductCatalogProps {
   initialProducts: Product[]
@@ -29,13 +39,16 @@ export function ProductCatalog({ initialProducts, categories }: ProductCatalogPr
 
   return (
     <section id="harvest-catalog" className="py-8 sm:py-16 max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full">
-      {/* Section Header matching image 2 */}
+      {/* Section Header */}
       <div className="flex flex-col items-start gap-2 mb-6">
         {/* Pill Badge */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider border border-emerald-200 dark:border-emerald-800">
+        <Badge
+          variant="outline"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-emerald-200 dark:border-emerald-800"
+        >
           <span className="text-sm">🚜</span>
           <span>UNPROCESSED & NUTRIENT DENSE</span>
-        </div>
+        </Badge>
 
         {/* Main Heading */}
         <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-foreground font-heading leading-tight">
@@ -49,64 +62,57 @@ export function ProductCatalog({ initialProducts, categories }: ProductCatalogPr
       </div>
 
       {/* Control Bar & Filters */}
-      <div className="flex flex-col gap-3.5 pb-6 border-b border-border/80 w-full">
+      <div className="flex flex-col gap-3.5 pb-6 w-full">
         {/* Top Control Badges & Sort Row */}
         <div className="flex items-center justify-between gap-2.5 flex-wrap">
           {/* Available Count Badge */}
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 text-emerald-800 dark:text-emerald-300 text-xs font-bold border border-emerald-200/80 dark:border-emerald-800">
-            <span>{totalResults} Products Available</span>
-          </div>
-
-          {/* Sort Dropdown styled as pill */}
-          <div className="relative inline-flex items-center">
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="appearance-none pl-3.5 pr-8 py-1.5 text-xs bg-card text-foreground font-semibold rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-2xs cursor-pointer"
-            >
-              <option value="featured">Featured Harvest</option>
-              <option value="rating">Top Rated</option>
-              <option value="popular">Most Popular</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-            </select>
-            <ChevronDown className="absolute right-2.5 size-3.5 text-muted-foreground pointer-events-none" />
-          </div>
-        </div>
-
-        {/* Add Produce / Direct WhatsApp CTA button */}
-        <div>
-          <a
-            href={`https://wa.me/${FARM_WHATSAPP_NUMBER}?text=${encodeURIComponent(
-              "नमस्ते Avaiya Farm! I would like to request or inquire about custom farm produce harvest."
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 bg-[#00703c] hover:bg-emerald-800 text-white font-bold text-xs px-4 py-2 rounded-full shadow-xs transition-colors"
+          <Badge
+            variant="outline"
+            className="inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 text-emerald-800 dark:text-emerald-300 text-xs font-bold border-emerald-200/80 dark:border-emerald-800"
           >
-            <PlusCircle className="size-3.5" />
-            <span>+ Add Produce</span>
-          </a>
+            <span>{totalResults} Products Available</span>
+          </Badge>
+
+          {/* Sort Select */}
+          <Select
+            value={sortBy}
+            onValueChange={(val) => {
+              if (val) setSortBy(val as SortOption)
+            }}
+          >
+            <SelectTrigger className="w-[180px] h-8 text-xs font-semibold rounded-xl bg-card border-border">
+              <SelectValue placeholder="Sort Harvest" />
+            </SelectTrigger>
+            <SelectContent align="end">
+              <SelectItem value="featured">Featured Harvest</SelectItem>
+              <SelectItem value="rating">Top Rated</SelectItem>
+              <SelectItem value="popular">Most Popular</SelectItem>
+              <SelectItem value="price-asc">Price: Low to High</SelectItem>
+              <SelectItem value="price-desc">Price: High to Low</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
-        {/* Category Pills (horizontally scrollable without page overflow) */}
+        {/* Category Pills */}
         <div className="w-full overflow-x-auto pb-1.5 scrollbar-none">
           <div className="flex items-center gap-2 min-w-max">
             {categories.map((cat) => {
               const isSelected = selectedCategory === cat.slug
               return (
-                <button
+                <Button
                   key={cat.id}
                   type="button"
+                  size="sm"
+                  variant={isSelected ? "default" : "outline"}
                   onClick={() => setSelectedCategory(cat.slug)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all border shrink-0 ${
+                  className={`rounded-full text-xs font-bold transition-all shrink-0 h-8 px-3.5 ${
                     isSelected
-                      ? "bg-[#00703c] text-white border-emerald-700 shadow-xs scale-102"
+                      ? "bg-[#00703c] hover:bg-emerald-800 text-white border-emerald-700 shadow-xs"
                       : "bg-card text-muted-foreground hover:text-foreground hover:bg-muted border-border"
                   }`}
                 >
                   {cat.name} {cat.count !== undefined ? `(${cat.count})` : ""}
-                </button>
+                </Button>
               )
             })}
           </div>
@@ -115,27 +121,33 @@ export function ProductCatalog({ initialProducts, categories }: ProductCatalogPr
         {/* Search Bar */}
         <div className="relative w-full max-w-md">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground pointer-events-none" />
-          <input
+          <Input
             type="text"
             placeholder="Search atta, ghee, oil..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-8 pr-3 py-1.5 text-xs bg-card text-foreground rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-2xs"
+            className="w-full pl-8 pr-8 text-xs bg-card text-foreground rounded-xl border border-border focus-visible:ring-emerald-600 shadow-2xs h-8"
           />
           {searchQuery && (
-            <button
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon-xs"
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground font-bold"
+              className="absolute right-2 top-1/2 -translate-y-1/2 size-5 rounded-full text-muted-foreground hover:text-foreground p-0"
+              aria-label="Clear search"
             >
-              ×
-            </button>
+              <X className="size-3" />
+            </Button>
           )}
         </div>
       </div>
 
+      <Separator className="mb-6" />
+
       {/* Product Grid: 1 col on mobile, 2 on sm, 3 on md, 4 on xl */}
       {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
@@ -153,16 +165,17 @@ export function ProductCatalog({ initialProducts, categories }: ProductCatalogPr
           <p className="text-xs text-muted-foreground max-w-sm">
             We couldn&apos;t find any pure produce matching your current search or category filter.
           </p>
-          <button
+          <Button
             type="button"
+            variant="link"
             onClick={() => {
               setSelectedCategory("all")
               setSearchQuery("")
             }}
-            className="mt-2 text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:underline"
+            className="mt-2 text-xs font-bold text-emerald-700 dark:text-emerald-400"
           >
             Clear All Filters
-          </button>
+          </Button>
         </div>
       )}
 
@@ -174,3 +187,4 @@ export function ProductCatalog({ initialProducts, categories }: ProductCatalogPr
     </section>
   )
 }
+

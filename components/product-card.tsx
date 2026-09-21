@@ -9,6 +9,8 @@ import { useWishlist } from "@/hooks/use-wishlist"
 import { StarRating } from "@/components/common/star-rating"
 import { createSingleProductWhatsAppOrderAction } from "@/app/actions/orders"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 
 interface ProductCardProps {
   product: Product
@@ -61,7 +63,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
   const isFavorite = isWishlisted(product.id)
 
   return (
-    <div className="group relative bg-card text-card-foreground rounded-2xl sm:rounded-3xl border border-border/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden p-3 sm:p-4 hover:-translate-y-0.5">
+    <Card className="group relative rounded-2xl sm:rounded-3xl border border-border/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden p-3 sm:p-4 hover:-translate-y-0.5 bg-card text-card-foreground">
       {/* Product Image Box */}
       <div
         className="relative w-full aspect-square sm:aspect-square rounded-xl sm:rounded-2xl bg-muted/40 overflow-hidden cursor-pointer"
@@ -77,48 +79,52 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
 
         {/* Top-Left Organic Badge */}
         <div className="absolute top-2.5 left-2.5 z-10">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-amber-400 text-amber-950 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-xs">
+          <Badge className="bg-amber-400 hover:bg-amber-400 text-amber-950 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-xs border-0 px-2.5 py-1 rounded-md">
             {product.badge || "100% ORGANIC"}
-          </span>
+          </Badge>
         </div>
 
         {/* Top-Right Wishlist & Quick View */}
         <div className="absolute top-2.5 right-2.5 z-10 flex flex-col gap-1.5">
-          <button
+          <Button
             type="button"
+            variant="ghost"
+            size="icon-sm"
             onClick={(e) => {
               e.stopPropagation()
               toggleWishlist(product.id)
             }}
             aria-label="Add to Wishlist"
-            className="size-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground transition-all shadow-xs active:scale-110"
+            className="size-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground transition-all shadow-xs active:scale-110 p-0"
           >
             <Heart
               className={`size-4 transition-transform ${
                 isFavorite ? "fill-rose-500 text-rose-500" : "text-foreground/70"
               }`}
             />
-          </button>
+          </Button>
 
           {onQuickView && (
-            <button
+            <Button
               type="button"
+              variant="ghost"
+              size="icon-sm"
               onClick={(e) => {
                 e.stopPropagation()
                 onQuickView(product)
               }}
               aria-label="Quick View Details"
-              className="size-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground transition-all opacity-0 group-hover:opacity-100 shadow-xs hidden sm:flex"
+              className="size-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur-md items-center justify-center text-foreground/80 hover:text-foreground transition-all opacity-0 group-hover:opacity-100 shadow-xs hidden sm:flex p-0"
               title="View product details"
             >
               <Eye className="size-4" />
-            </button>
+            </Button>
           )}
         </div>
       </div>
 
       {/* Product Content Details */}
-      <div className="pt-3 flex flex-col flex-1 gap-1.5">
+      <CardContent className="pt-3 p-0 flex flex-col flex-1 gap-1.5">
         {/* Rating Row */}
         <div className="flex items-center gap-1">
           <StarRating rating={product.rating} reviewsCount={product.reviewsCount} size="sm" />
@@ -165,7 +171,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
           </div>
         )}
 
-        {/* Price & Action Row matching image 2 */}
+        {/* Price & Action Row */}
         <div className="pt-2 mt-auto flex items-end justify-between gap-2 border-t border-border/60">
           {/* Price side */}
           <div className="flex flex-col">
@@ -188,25 +194,29 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
           <div className="flex items-center gap-1.5">
             {inCartQty > 0 ? (
               <div className="flex items-center rounded-lg border border-emerald-600/40 bg-emerald-50 dark:bg-emerald-950/40 p-0.5">
-                <button
+                <Button
                   type="button"
+                  variant="ghost"
+                  size="icon-xs"
                   onClick={() => updateQuantity(cartItemId, inCartQty - 1)}
-                  className="size-6 flex items-center justify-center rounded-md hover:bg-background text-foreground transition-colors"
+                  className="size-6 rounded-md hover:bg-background text-foreground transition-colors p-0"
                   aria-label="Decrease quantity"
                 >
                   <Minus className="size-3" />
-                </button>
+                </Button>
                 <span className="w-5 text-center text-xs font-bold text-foreground">
                   {inCartQty}
                 </span>
-                <button
+                <Button
                   type="button"
+                  variant="ghost"
+                  size="icon-xs"
                   onClick={() => updateQuantity(cartItemId, inCartQty + 1)}
-                  className="size-6 flex items-center justify-center rounded-md hover:bg-background text-foreground transition-colors"
+                  className="size-6 rounded-md hover:bg-background text-foreground transition-colors p-0"
                   aria-label="Increase quantity"
                 >
                   <Plus className="size-3" />
-                </button>
+                </Button>
               </div>
             ) : (
               <Button
@@ -234,19 +244,22 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
             )}
 
             {/* Quick WhatsApp single order icon */}
-            <button
+            <Button
               type="button"
+              variant="outline"
+              size="icon-sm"
               onClick={handleQuickWhatsAppOrder}
               disabled={isOrderingWhatsApp}
               title="Order this produce directly on WhatsApp"
               aria-label="Order on WhatsApp"
-              className="p-1.5 rounded-lg border border-emerald-300 dark:border-emerald-800/80 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/80 dark:text-emerald-300 transition-colors shadow-xs"
+              className="size-8 rounded-lg border border-emerald-300 dark:border-emerald-800/80 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/80 dark:text-emerald-300 transition-colors shadow-xs p-0"
             >
               <MessageCircle className="size-3.5 fill-emerald-600 dark:fill-emerald-400 text-emerald-600 dark:text-emerald-400" />
-            </button>
+            </Button>
           </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }
+

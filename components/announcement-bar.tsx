@@ -1,5 +1,5 @@
 import React from "react"
-import { Sparkles, Phone, MapPin, Truck, ShieldCheck } from "lucide-react"
+import { Phone, MapPin, Leaf } from "lucide-react"
 import { FARM_DISPLAY_PHONE, FARM_WHATSAPP_NUMBER } from "@/lib/whatsapp"
 
 export function AnnouncementBar() {
@@ -8,13 +8,15 @@ export function AnnouncementBar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4 overflow-x-auto scrollbar-none">
         {/* Left: Pure & Natural Tag */}
         <div className="flex items-center gap-1.5 shrink-0 font-medium">
-          <Sparkles className="size-3 text-amber-300 animate-pulse shrink-0" />
-          <span className="truncate">100% Pure & Natural ...</span>
+          <Leaf className="size-3 text-amber-300 shrink-0" />
+          <span className="truncate">100% Pure & Natural Produce Direct from Gujarat Farms • Fresh Stone Milled Today</span>
         </div>
 
         {/* Center: Farm Location */}
         <a
-          href="#farm-story"
+          href="https://maps.app.goo.gl/AqFZFA1Ccs8mSNqJ9"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-1 hover:text-amber-300 transition-colors shrink-0 font-medium"
         >
           <MapPin className="size-3 text-amber-300 shrink-0" />
@@ -26,7 +28,7 @@ export function AnnouncementBar() {
 
         {/* Right: Phone / WhatsApp Direct */}
         <a
-          href={`https://wa.me/${FARM_WHATSAPP_NUMBER}`}
+          href={`tel:+${FARM_WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 hover:text-amber-300 transition-colors shrink-0 font-bold"
@@ -34,18 +36,6 @@ export function AnnouncementBar() {
           <Phone className="size-3 text-amber-300 shrink-0" />
           <span>{FARM_DISPLAY_PHONE}</span>
         </a>
-
-        {/* Extra desktop badges */}
-        <div className="hidden lg:flex items-center gap-4 text-emerald-100 font-medium">
-          <div className="flex items-center gap-1">
-            <Truck className="size-3.5 text-amber-300" />
-            <span>Free Delivery &gt; ₹499</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <ShieldCheck className="size-3.5 text-amber-300" />
-            <span>Chemical-Free</span>
-          </div>
-        </div>
       </div>
     </div>
   )

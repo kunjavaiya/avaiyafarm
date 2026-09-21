@@ -2,8 +2,10 @@
 
 import React from "react"
 import Image from "next/image"
-import { Sprout, CheckCircle, ArrowRight, MessageCircle, ShieldCheck, HeartHandshake } from "lucide-react"
+import { Sprout, CheckCircle, ArrowRight, MessageCircle, ShieldCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 import { FARM_DISPLAY_PHONE, FARM_WHATSAPP_NUMBER } from "@/lib/whatsapp"
 
 export function FarmStorySection() {
@@ -20,7 +22,7 @@ export function FarmStorySection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Left Column: Visual Story Banner */}
           <div className="lg:col-span-6 relative w-full">
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-xl bg-card">
+            <Card className="rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-xl bg-card p-0 gap-0">
               <div className="relative aspect-4/3 w-full overflow-hidden">
                 <Image
                   src="/story-harvest.jpg"
@@ -32,14 +34,20 @@ export function FarmStorySection() {
 
                 {/* Floating quality chips */}
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-semibold border border-white/20">
+                  <Badge
+                    variant="outline"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-semibold border-white/20"
+                  >
                     <CheckCircle className="size-3.5 text-emerald-400" />
                     <span>Pure Organic</span>
-                  </div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-semibold border border-white/20">
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-semibold border-white/20"
+                  >
                     <CheckCircle className="size-3.5 text-amber-400" />
                     <span>Vedic Slow Milling</span>
-                  </div>
+                  </Badge>
                 </div>
 
                 {/* Bottom Story Tag */}
@@ -56,15 +64,18 @@ export function FarmStorySection() {
                   <ShieldCheck className="size-6 text-emerald-600 shrink-0" />
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
 
           {/* Right Column: Narrative and Stats */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-300 dark:border-emerald-800 w-fit">
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider border-emerald-300 dark:border-emerald-800 w-fit"
+            >
               <Sprout className="size-3.5 text-emerald-600" />
               <span>TRACEABLE PURITY • SUNLIT FIELDS</span>
-            </div>
+            </Badge>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground font-heading leading-tight">
               Our Journey: Directly from our sunlit fields to your family&apos;s table.
@@ -81,37 +92,42 @@ export function FarmStorySection() {
 
             {/* Metrics cards */}
             <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-card border border-border flex flex-col gap-1 shadow-2xs">
-                <span className="text-2xl sm:text-3xl font-black text-emerald-700 dark:text-emerald-400">
-                  100%
-                </span>
-                <span className="text-xs font-bold text-foreground">Traceable Harvest</span>
-                <span className="text-[11px] text-muted-foreground">
-                  Gir Somnath single-origin farmlands.
-                </span>
-              </div>
+              <Card className="p-4 rounded-2xl bg-card border border-border flex flex-col gap-1 shadow-2xs py-4">
+                <CardContent className="p-0 flex flex-col gap-1">
+                  <span className="text-2xl sm:text-3xl font-black text-emerald-700 dark:text-emerald-400">
+                    100%
+                  </span>
+                  <span className="text-xs font-bold text-foreground">Traceable Harvest</span>
+                  <span className="text-[11px] text-muted-foreground">
+                    Gir Somnath single-origin farmlands.
+                  </span>
+                </CardContent>
+              </Card>
 
-              <div className="p-4 rounded-2xl bg-card border border-border flex flex-col gap-1 shadow-2xs">
-                <span className="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-400">
-                  24 Hrs
-                </span>
-                <span className="text-xs font-bold text-foreground">Fresh Milling Cycle</span>
-                <span className="text-[11px] text-muted-foreground">
-                  Slow-ground and dispatched fresh.
-                </span>
-              </div>
+              <Card className="p-4 rounded-2xl bg-card border border-border flex flex-col gap-1 shadow-2xs py-4">
+                <CardContent className="p-0 flex flex-col gap-1">
+                  <span className="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-400">
+                    24 Hrs
+                  </span>
+                  <span className="text-xs font-bold text-foreground">Fresh Milling Cycle</span>
+                  <span className="text-[11px] text-muted-foreground">
+                    Slow-ground and dispatched fresh.
+                  </span>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Actions */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button
+              <Button
                 type="button"
+                variant="link"
                 onClick={scrollToCatalog}
-                className="inline-flex items-center gap-2 text-sm font-bold text-emerald-800 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-emerald-800 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 p-0 h-auto"
               >
                 <span>Explore Farm Catalog</span>
                 <ArrowRight className="size-4" />
-              </button>
+              </Button>
 
               <a
                 href={`https://wa.me/${FARM_WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -131,3 +147,4 @@ export function FarmStorySection() {
     </section>
   )
 }
+

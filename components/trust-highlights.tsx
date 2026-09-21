@@ -1,5 +1,6 @@
 import React from "react"
 import { ShieldCheck, Truck, Sprout, Sparkles } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 
 export function TrustHighlights() {
   const highlights = [
@@ -35,27 +36,30 @@ export function TrustHighlights() {
         {highlights.map((item, index) => {
           const Icon = item.icon
           return (
-            <div
+            <Card
               key={index}
-              className="bg-card text-card-foreground p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-border shadow-md hover:shadow-lg transition-all flex items-start gap-3 group"
+              className="bg-card text-card-foreground p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-border shadow-md hover:shadow-lg transition-all group py-3.5"
             >
-              <div
-                className={`size-9 sm:size-10 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${item.iconBg}`}
-              >
-                <Icon className="size-4 sm:size-5" />
-              </div>
-              <div className="flex flex-col gap-0.5 min-w-0">
-                <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </div>
+              <CardContent className="p-0 flex items-start gap-3">
+                <div
+                  className={`size-9 sm:size-10 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${item.iconBg}`}
+                >
+                  <Icon className="size-4 sm:size-5" />
+                </div>
+                <div className="flex flex-col gap-0.5 min-w-0">
+                  <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           )
         })}
       </div>
     </section>
   )
 }
+
