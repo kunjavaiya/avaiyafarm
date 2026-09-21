@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Image from "next/image"
-import { Plus, Minus, ShoppingBag, MessageCircle, ShieldCheck, MapPin, Calendar, Activity } from "lucide-react"
+import { Plus, Minus, ShoppingBag, MessageCircle, ShieldCheck, MapPin, Calendar, Activity, X } from "lucide-react"
 import { Product, ProductVariant } from "@/types/product"
 import { useCart } from "@/lib/cart-context"
 import { OrganicBadge } from "@/components/common/organic-badge"
@@ -18,6 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
+  DialogClose,
 } from "@/components/ui/dialog"
 
 interface ProductDetailDialogProps {
@@ -78,7 +79,28 @@ export function ProductDetailDialog({ product, onClose }: ProductDetailDialogPro
         if (!open) onClose()
       }}
     >
-      <DialogContent className="w-[95vw] sm:w-[92vw] md:w-[88vw] lg:w-full sm:max-w-3xl lg:max-w-4xl max-h-[92vh] overflow-y-auto overflow-x-hidden p-4 sm:p-6 md:p-8 bg-card text-card-foreground rounded-2xl border-border shadow-2xl">
+      <DialogContent
+        showCloseButton={false}
+        className="w-[95vw] sm:w-[92vw] md:w-[88vw] lg:w-full sm:max-w-3xl lg:max-w-4xl max-h-[92vh] overflow-y-auto overflow-x-hidden p-4 sm:p-6 md:p-8 bg-card text-card-foreground rounded-2xl border-border shadow-2xl relative"
+      >
+        {/* Sticky Close Button on Top Right using Shadcn Button */}
+        <div className="sticky top-0 z-50 flex justify-end -mt-1 -mr-1 mb-[-2rem] pointer-events-none">
+          <DialogClose
+            render={
+              <Button
+                type="button"
+                variant="secondary"
+                size="icon-sm"
+                className="pointer-events-auto size-8 sm:size-9 rounded-full bg-background/95 hover:bg-muted text-foreground/90 hover:text-foreground backdrop-blur-md shadow-md border border-border/80 transition-all active:scale-95"
+                aria-label="Close dialog"
+              />
+            }
+          >
+            <X className="size-4" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
+        </div>
+
         <DialogHeader className="sr-only">
           <DialogTitle>{product.name}</DialogTitle>
           <DialogDescription>{product.shortDescription}</DialogDescription>
