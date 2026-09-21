@@ -6,8 +6,8 @@ import { FARM_DISPLAY_PHONE, FARM_WHATSAPP_NUMBER } from "@/lib/whatsapp"
 
 export function Footer() {
   return (
-    <footer className="bg-emerald-950 text-emerald-100 border-t border-emerald-900/60 pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-emerald-950 text-emerald-100 border-t border-emerald-900/60 pt-12 sm:pt-16 pb-10 sm:pb-12 w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-900/80">
           {/* Brand Col */}
           <div className="lg:col-span-4 flex flex-col gap-4">

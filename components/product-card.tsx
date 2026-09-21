@@ -2,13 +2,11 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
-import { Heart, Plus, Minus, Check, MessageCircle, Eye } from "lucide-react"
+import { Heart, Plus, Minus, Check, MessageCircle, ShoppingBag, Eye } from "lucide-react"
 import { Product, ProductVariant } from "@/types/product"
 import { useCart } from "@/lib/cart-context"
 import { useWishlist } from "@/hooks/use-wishlist"
-import { OrganicBadge } from "@/components/common/organic-badge"
 import { StarRating } from "@/components/common/star-rating"
-import { PriceDisplay } from "@/components/common/price-display"
 import { createSingleProductWhatsAppOrderAction } from "@/app/actions/orders"
 import { Button } from "@/components/ui/button"
 
@@ -63,29 +61,29 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
   const isFavorite = isWishlisted(product.id)
 
   return (
-    <div className="group relative bg-card text-card-foreground rounded-2xl border border-border/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1">
-      {/* Card Header Media & Badges */}
-      <div className="relative w-full aspect-square bg-muted/40 overflow-hidden cursor-pointer">
-        {/* Product Image */}
+    <div className="group relative bg-card text-card-foreground rounded-2xl sm:rounded-3xl border border-border/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden p-3 sm:p-4 hover:-translate-y-0.5">
+      {/* Product Image Box */}
+      <div
+        className="relative w-full aspect-square sm:aspect-square rounded-xl sm:rounded-2xl bg-muted/40 overflow-hidden cursor-pointer"
+        onClick={() => onQuickView?.(product)}
+      >
         <Image
           src={product.image}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
-          onClick={() => onQuickView?.(product)}
         />
 
-        {/* Top Badges */}
-        <div className="absolute top-3 left-3 z-10">
-          <OrganicBadge
-            text={product.badge || "100% Organic"}
-            variant={product.badgeColor || "amber"}
-          />
+        {/* Top-Left Organic Badge */}
+        <div className="absolute top-2.5 left-2.5 z-10">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-amber-400 text-amber-950 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-xs">
+            {product.badge || "100% ORGANIC"}
+          </span>
         </div>
 
-        {/* Top Right Wishlist & Quick View */}
-        <div className="absolute top-3 right-3 z-10 flex flex-col gap-1.5">
+        {/* Top-Right Wishlist & Quick View */}
+        <div className="absolute top-2.5 right-2.5 z-10 flex flex-col gap-1.5">
           <button
             type="button"
             onClick={(e) => {
@@ -93,15 +91,11 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
               toggleWishlist(product.id)
             }}
             aria-label="Add to Wishlist"
-            className={`p-2 rounded-full backdrop-blur-md transition-all shadow-xs ${
-              isFavorite
-                ? "bg-rose-50 text-rose-600 dark:bg-rose-950/80 dark:text-rose-400"
-                : "bg-background/80 text-muted-foreground hover:text-foreground hover:bg-background"
-            }`}
+            className="size-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground transition-all shadow-xs active:scale-110"
           >
             <Heart
-              className={`size-4 transition-transform active:scale-125 ${
-                isFavorite ? "fill-rose-500 text-rose-500" : ""
+              className={`size-4 transition-transform ${
+                isFavorite ? "fill-rose-500 text-rose-500" : "text-foreground/70"
               }`}
             />
           </button>
@@ -114,7 +108,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
                 onQuickView(product)
               }}
               aria-label="Quick View Details"
-              className="p-2 rounded-full bg-background/80 text-muted-foreground hover:text-foreground hover:bg-background backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 shadow-xs"
+              className="size-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground transition-all opacity-0 group-hover:opacity-100 shadow-xs hidden sm:flex"
               title="View product details"
             >
               <Eye className="size-4" />
@@ -123,31 +117,34 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         </div>
       </div>
 
-      {/* Product Details */}
-      <div className="p-4 sm:p-5 flex flex-col flex-1 gap-2.5">
-        {/* Ratings */}
-        <StarRating rating={product.rating} reviewsCount={product.reviewsCount} />
+      {/* Product Content Details */}
+      <div className="pt-3 flex flex-col flex-1 gap-1.5">
+        {/* Rating Row */}
+        <div className="flex items-center gap-1">
+          <StarRating rating={product.rating} reviewsCount={product.reviewsCount} size="sm" />
+        </div>
 
-        {/* Titles */}
-        <div className="flex flex-col gap-0.5 cursor-pointer" onClick={() => onQuickView?.(product)}>
-          <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors line-clamp-1">
+        {/* Product Title */}
+        <div
+          className="flex flex-col cursor-pointer"
+          onClick={() => onQuickView?.(product)}
+        >
+          <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-1">
             {product.name}
           </h3>
-          {product.hindiName && (
-            <p className="text-xs font-medium text-emerald-800 dark:text-emerald-400 line-clamp-1">
-              {product.hindiName}
-            </p>
-          )}
+          <p className="text-[11px] sm:text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+            {product.hindiName || product.category.replace(/-/g, " ")}
+          </p>
         </div>
 
         {/* Short Description */}
-        <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+        <p className="text-[11px] sm:text-xs text-muted-foreground line-clamp-1 leading-snug">
           {product.shortDescription}
         </p>
 
-        {/* Variant / Pack Size Selector */}
+        {/* Variant Pills if any */}
         {product.variants && product.variants.length > 1 && (
-          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+          <div className="flex flex-wrap items-center gap-1 pt-1">
             {product.variants.map((v) => {
               const isSelected = selectedVariant.size === v.size
               return (
@@ -155,9 +152,9 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
                   key={v.size}
                   type="button"
                   onClick={() => setSelectedVariant(v)}
-                  className={`text-[11px] font-semibold px-2 py-0.5 rounded-md border transition-all ${
+                  className={`text-[10px] font-bold px-2 py-0.5 rounded-md border transition-all ${
                     isSelected
-                      ? "bg-primary text-primary-foreground border-primary shadow-xs"
+                      ? "bg-[#00703c] text-white border-emerald-700"
                       : "bg-muted/50 text-muted-foreground hover:text-foreground border-border"
                   }`}
                 >
@@ -168,38 +165,47 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
           </div>
         )}
 
-        {/* Price & Action Row */}
-        <div className="pt-2 mt-auto border-t border-border/60 flex items-center justify-between gap-2">
-          {/* Price */}
-          <PriceDisplay
-            price={selectedVariant.price}
-            mrp={selectedVariant.mrp}
-            unit={product.variants.length > 1 ? undefined : selectedVariant.size}
-            size="md"
-          />
+        {/* Price & Action Row matching image 2 */}
+        <div className="pt-2 mt-auto flex items-end justify-between gap-2 border-t border-border/60">
+          {/* Price side */}
+          <div className="flex flex-col">
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-base sm:text-lg font-extrabold text-emerald-800 dark:text-emerald-400 tracking-tight">
+                ₹{selectedVariant.price}
+              </span>
+              {selectedVariant.mrp && selectedVariant.mrp > selectedVariant.price && (
+                <span className="text-[11px] sm:text-xs text-muted-foreground line-through">
+                  ₹{selectedVariant.mrp}
+                </span>
+              )}
+            </div>
+            <span className="text-[10px] text-muted-foreground font-medium">
+              / {selectedVariant.size}
+            </span>
+          </div>
 
-          {/* Add / Quantity Button Controls */}
+          {/* Action side */}
           <div className="flex items-center gap-1.5">
             {inCartQty > 0 ? (
-              <div className="flex items-center rounded-lg border border-primary/40 bg-secondary/50 p-0.5">
+              <div className="flex items-center rounded-lg border border-emerald-600/40 bg-emerald-50 dark:bg-emerald-950/40 p-0.5">
                 <button
                   type="button"
                   onClick={() => updateQuantity(cartItemId, inCartQty - 1)}
-                  className="size-7 flex items-center justify-center rounded-md hover:bg-background text-foreground transition-colors"
+                  className="size-6 flex items-center justify-center rounded-md hover:bg-background text-foreground transition-colors"
                   aria-label="Decrease quantity"
                 >
-                  <Minus className="size-3.5" />
+                  <Minus className="size-3" />
                 </button>
-                <span className="w-6 text-center text-xs font-bold text-foreground">
+                <span className="w-5 text-center text-xs font-bold text-foreground">
                   {inCartQty}
                 </span>
                 <button
                   type="button"
                   onClick={() => updateQuantity(cartItemId, inCartQty + 1)}
-                  className="size-7 flex items-center justify-center rounded-md hover:bg-background text-foreground transition-colors"
+                  className="size-6 flex items-center justify-center rounded-md hover:bg-background text-foreground transition-colors"
                   aria-label="Increase quantity"
                 >
-                  <Plus className="size-3.5" />
+                  <Plus className="size-3" />
                 </button>
               </div>
             ) : (
@@ -207,20 +213,20 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
                 type="button"
                 onClick={handleAddToCart}
                 size="sm"
-                className={`rounded-lg font-bold px-3 py-1.5 text-xs transition-all shadow-xs ${
+                className={`rounded-lg font-bold px-3 py-1.5 text-xs transition-all shadow-xs gap-1.5 ${
                   justAdded
-                    ? "bg-emerald-600 text-white"
-                    : "bg-primary hover:bg-primary/90 text-primary-foreground"
+                    ? "bg-emerald-700 text-white"
+                    : "bg-[#00703c] hover:bg-emerald-800 text-white"
                 }`}
               >
                 {justAdded ? (
                   <>
-                    <Check className="size-3.5 mr-1" />
+                    <Check className="size-3.5" />
                     <span>Added</span>
                   </>
                 ) : (
                   <>
-                    <Plus className="size-3.5 mr-1" />
+                    <ShoppingBag className="size-3.5" />
                     <span>Add</span>
                   </>
                 )}
@@ -232,11 +238,11 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
               type="button"
               onClick={handleQuickWhatsAppOrder}
               disabled={isOrderingWhatsApp}
-              title="Order this product directly on WhatsApp"
+              title="Order this produce directly on WhatsApp"
               aria-label="Order on WhatsApp"
               className="p-1.5 rounded-lg border border-emerald-300 dark:border-emerald-800/80 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/80 dark:text-emerald-300 transition-colors shadow-xs"
             >
-              <MessageCircle className="size-4 fill-emerald-600 dark:fill-emerald-400 text-emerald-600 dark:text-emerald-400" />
+              <MessageCircle className="size-3.5 fill-emerald-600 dark:fill-emerald-400 text-emerald-600 dark:text-emerald-400" />
             </button>
           </div>
         </div>

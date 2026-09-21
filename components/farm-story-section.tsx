@@ -15,12 +15,12 @@ export function FarmStorySection() {
   }
 
   return (
-    <section className="py-16 sm:py-24 bg-secondary/30 border-y border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <section id="farm-story" className="py-12 sm:py-20 bg-secondary/30 border-y border-border w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Left Column: Visual Story Banner */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border-2 border-border/80 shadow-2xl bg-card">
+          <div className="lg:col-span-6 relative w-full">
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-xl bg-card">
               <div className="relative aspect-4/3 w-full overflow-hidden">
                 <Image
                   src="/story-harvest.jpg"

@@ -30,25 +30,25 @@ export function TrustHighlights() {
   ]
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8 relative z-20">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 -mt-4 sm:-mt-8 relative z-20 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {highlights.map((item, index) => {
           const Icon = item.icon
           return (
             <div
               key={index}
-              className="bg-card text-card-foreground p-4 sm:p-5 rounded-xl border border-border shadow-md hover:shadow-lg transition-all flex items-start gap-3.5 group"
+              className="bg-card text-card-foreground p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-border shadow-md hover:shadow-lg transition-all flex items-start gap-3 group"
             >
               <div
-                className={`size-10 sm:size-11 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${item.iconBg}`}
+                className={`size-9 sm:size-10 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${item.iconBg}`}
               >
-                <Icon className="size-5" />
+                <Icon className="size-4 sm:size-5" />
               </div>
-              <div className="flex flex-col gap-0.5">
-                <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors">
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>
