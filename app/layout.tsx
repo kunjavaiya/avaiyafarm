@@ -37,14 +37,14 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased overflow-x-hidden", fontMono.variable, "font-sans", geist.variable)}
+      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
     >
-      <body className="min-h-screen w-full max-w-full overflow-x-hidden bg-background text-foreground flex flex-col">
+      <body className="min-h-screen w-full bg-background text-foreground flex flex-col">
         <ThemeProvider>
           <CartProvider>
             <AnnouncementBar />
             <Header />
-            <main className="flex-1 w-full max-w-full overflow-x-hidden">{children}</main>
+            <main className="flex-1 w-full">{children}</main>
             <Footer />
             <CartDrawer />
           </CartProvider>

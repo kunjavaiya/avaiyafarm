@@ -45,7 +45,7 @@ export function Footer() {
                 className="flex items-center gap-2 hover:underline"
               >
                 <MapPin className="size-4 text-amber-400 shrink-0" />
-                <span>Avaiya Agro Farmlands, Saurashtra / Gir Somnath, Gujarat</span>
+                <span>Avaiya Farm, Saurashtra / Bhavnagar, Gujarat</span>
               </a>
               <a
                 href={`https://wa.me/${FARM_WHATSAPP_NUMBER}`}

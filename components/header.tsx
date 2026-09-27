@@ -5,7 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 import {
   ShoppingBag,
-  Heart,
   Menu,
   Sprout,
   ShieldCheck,
@@ -16,7 +15,6 @@ import {
   ChevronRight,
 } from "lucide-react"
 import { useCart } from "@/lib/cart-context"
-import { useWishlist } from "@/hooks/use-wishlist"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -31,7 +29,6 @@ import { FARM_DISPLAY_PHONE, FARM_WHATSAPP_NUMBER } from "@/lib/whatsapp"
 
 export function Header() {
   const { totalCount, setIsCartOpen } = useCart()
-  const { wishlist } = useWishlist()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const scrollToSection = (id: string) => {
@@ -113,31 +110,6 @@ export function Header() {
               <ThemeToggle />
             </div>
 
-            {/* Wishlist Indicator Button */}
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon-sm"
-              onClick={() => {
-                const catalogEl = document.getElementById("harvest-catalog")
-                catalogEl?.scrollIntoView({ behavior: "smooth" })
-              }}
-              className="relative p-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-muted transition-colors shrink-0 size-9"
-              title="Saved items"
-              aria-label="Wishlist"
-            >
-              <Heart
-                className={`size-5 transition-transform active:scale-125 ${
-                  wishlist.length > 0 ? "fill-rose-500 text-rose-500" : "text-foreground/70"
-                }`}
-              />
-              {wishlist.length > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 bg-rose-500 text-white text-[10px] font-bold size-4 rounded-full flex items-center justify-center animate-in zoom-in">
-                  {wishlist.length}
-                </span>
-              )}
-            </Button>
-
             {/* Cart Trigger Button */}
             <Button
               type="button"
@@ -212,18 +184,6 @@ export function Header() {
               <span className="flex items-center gap-2.5 text-foreground">
                 <ShieldCheck className="size-4 text-emerald-600" />
                 Our Gir Farm Story
-              </span>
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </button>
-
-            <button
-              type="button"
-              onClick={() => scrollToSection("harvest-catalog")}
-              className="w-full flex items-center justify-between p-2.5 rounded-xl hover:bg-secondary/70 text-left transition-colors"
-            >
-              <span className="flex items-center gap-2.5 text-foreground">
-                <Heart className="size-4 text-rose-500" />
-                Saved Wishlist ({wishlist.length})
               </span>
               <ChevronRight className="size-4 text-muted-foreground" />
             </button>

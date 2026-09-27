@@ -26,19 +26,18 @@ export function StarRating({
           return (
             <Star
               key={star}
-              className={`${iconSize} ${
-                isFilled
-                  ? "fill-amber-400 text-amber-400"
-                  : isPartial
+              className={`${iconSize} ${isFilled
+                ? "fill-amber-400 text-amber-400"
+                : isPartial
                   ? "fill-amber-400/50 text-amber-400"
                   : "text-muted-foreground/30 fill-transparent"
-              }`}
+                }`}
             />
           )
         })}
       </div>
       {showCount && (
-        <span className="text-xs font-semibold text-muted-foreground">
+        <span className="text-xs font-semibold text-muted-foreground max-sm:text-[10px] max-sm:hidden">
           {rating.toFixed(1)} {reviewsCount ? `(${reviewsCount})` : ""}
         </span>
       )}

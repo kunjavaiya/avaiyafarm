@@ -9,7 +9,6 @@ import {
   ShoppingBag,
   MessageCircle,
   Truck,
-  Sparkles,
   ShieldCheck,
   Loader2,
   ChevronDown,
@@ -18,7 +17,6 @@ import {
 import { useCart } from "@/lib/cart-context"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Progress } from "@/components/ui/progress"
 import { Separator } from "@/components/ui/separator"
 import {
   Sheet,
@@ -54,10 +52,6 @@ export function CartDrawer() {
   const [customNote, setCustomNote] = useState("")
   const [showAddressForm, setShowAddressForm] = useState(false)
 
-  const freeDeliveryThreshold = 499
-  const amountNeeded = Math.max(0, freeDeliveryThreshold - subtotal)
-  const deliveryProgress = Math.min(100, (subtotal / freeDeliveryThreshold) * 100)
-
   const handleCheckout = async () => {
     await checkoutWithWhatsApp(customNote)
   }
@@ -85,26 +79,14 @@ export function CartDrawer() {
           </div>
         </SheetHeader>
 
-        {/* Free Delivery Bar */}
-        <div className="px-5 py-3 bg-secondary/60 border-b border-border text-xs">
-          <div className="flex items-center justify-between font-medium mb-1.5">
-            <span className="flex items-center gap-1.5 text-foreground">
-              <Truck className="size-3.5 text-emerald-600" />
-              {amountNeeded > 0 ? (
-                <>
-                  Add <strong>₹{amountNeeded}</strong> more for Free Delivery
-                </>
-              ) : (
-                <span className="text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1">
-                  <Sparkles className="size-3.5" /> FREE Farm Delivery Unlocked!
-                </span>
-              )}
-            </span>
-            <span className="text-[11px] font-bold text-muted-foreground">
-              {Math.round(deliveryProgress)}%
+        {/* Free Delivery Banner */}
+        <div className="px-4 py-2.5 bg-emerald-50 dark:bg-emerald-950/60 border-b border-emerald-100 dark:border-emerald-900/40 text-xs">
+          <div className="flex items-center justify-between font-medium">
+            <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300 font-bold text-xs">
+              <Truck className="size-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <span>100% Free Farm Delivery on All Orders</span>
             </span>
           </div>
-          <Progress value={deliveryProgress} className="h-1.5" />
         </div>
 
         {/* Cart Item List */}
@@ -313,10 +295,10 @@ export function CartDrawer() {
                   <span>-₹{totalSavings}</span>
                 </div>
               )}
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span>Delivery</span>
-                <span className="font-semibold text-emerald-700 dark:text-emerald-400">
-                  {amountNeeded === 0 ? "FREE" : "Standard"}
+                <span className="font-bold text-emerald-700 dark:text-emerald-400">
+                  FREE
                 </span>
               </div>
               <Separator className="my-1" />
@@ -342,7 +324,7 @@ export function CartDrawer() {
               ) : (
                 <>
                   <MessageCircle className="size-5 fill-white" />
-                  <span>Order via WhatsApp ({FARM_DISPLAY_PHONE})</span>
+                  <span className="truncate">Order via WhatsApp ({FARM_DISPLAY_PHONE})</span>
                 </>
               )}
             </Button>

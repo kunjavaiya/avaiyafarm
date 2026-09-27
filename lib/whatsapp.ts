@@ -47,7 +47,7 @@ export function buildCartOrderMessage(
   if (totalMrp > totalAmount) {
     lines.push(`💰 *You Saved:* ₹${totalMrp - totalAmount} on MRP`)
   }
-  lines.push("🚚 *Delivery:* Free / Standard Farm Dispatch")
+  lines.push("🚚 *Delivery:* FREE (No minimum order)")
   lines.push(`💵 *Final Amount to Pay:* *₹${totalAmount}* (COD / UPI)`)
   lines.push("──────────────────────")
 

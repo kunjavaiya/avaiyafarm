@@ -105,11 +105,10 @@ export function ProductCatalog({ initialProducts, categories }: ProductCatalogPr
                   size="sm"
                   variant={isSelected ? "default" : "outline"}
                   onClick={() => setSelectedCategory(cat.slug)}
-                  className={`rounded-full text-xs font-bold transition-all shrink-0 h-8 px-3.5 ${
-                    isSelected
+                  className={`rounded-full text-xs font-bold transition-all shrink-0 h-8 px-3.5 ${isSelected
                       ? "bg-[#00703c] hover:bg-emerald-800 text-white border-emerald-700 shadow-xs"
                       : "bg-card text-muted-foreground hover:text-foreground hover:bg-muted border-border"
-                  }`}
+                    }`}
                 >
                   {cat.name} {cat.count !== undefined ? `(${cat.count})` : ""}
                 </Button>
@@ -147,7 +146,7 @@ export function ProductCatalog({ initialProducts, categories }: ProductCatalogPr
 
       {/* Product Grid: 1 col on mobile, 2 on sm, 3 on md, 4 on xl */}
       {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}

@@ -7,9 +7,9 @@ export function AnnouncementBar() {
     <div className="bg-[#00703c] text-white text-[11px] sm:text-xs py-1.5 px-3 sm:px-4 border-b border-emerald-800/30 overflow-hidden">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4 overflow-x-auto scrollbar-none">
         {/* Left: Pure & Natural Tag */}
-        <div className="flex items-center gap-1.5 shrink-0 font-medium">
+        <div className="flex items-center gap-1.5 shrink-0 font-medium max-sm:hidden">
           <Leaf className="size-3 text-amber-300 shrink-0" />
-          <span className="truncate">100% Pure & Natural Produce Direct from Gujarat Farms • Fresh Stone Milled Today</span>
+          <span className="truncate">100% Pure & Natural Produce Direct from Gujarat Farms Fresh Stone Milled Today</span>
         </div>
 
         {/* Center: Farm Location */}
