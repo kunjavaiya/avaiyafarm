@@ -1,10 +1,10 @@
 [
   {
     "id": "prod-1",
-    "slug": "desi-wheat-atta",
-    "name": "Avaiya Farm Pure Wheat Atta",
-    "hindiName": "जैविक गेहूं का आटा (Chakki Fresh)",
-    "category": "desi-flours",
+    "slug": "red-chilly",
+    "name": "Red Chilly",
+    "hindiName": "लाल मिर्च",
+    "category": "vedic-spices",
     "price": 299,
     "mrp": 360,
     "unit": "1 kg",
@@ -29,7 +29,7 @@
     "reviewsCount": 128,
     "badge": "100% Pure",
     "badgeColor": "tertiary",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDH8SkoxZBceDfYiZsdbH6tPlIh8dPl2CljtucrjWhqS0Yp4rW7DAxmtkcOYoTJh4dgu7SLWB1YJOPkZp3jhw2KhGXPD2ZkV3NUyFP3ulLmmlFM2_Mr82tUsnh_fA-SjzJK_jFzSYk13ptGoZqKvrA2uam19R-ZTLr9UN1-HB3ArEptdksMnQLpk4vF6Jc04Od3_IGN4J1wfqewIyCRGIXFkB907OShYa0z2-T4_lHdWRrfPITL18XGeA",
+    "image": "/products/p1.jpeg",
     "shortDescription": "Traditional stone-chakki slow milled to preserve natural germ fiber and wheat aroma.",
     "description": "Our Desi Wheat Atta is sourced from heirloom Kathiya and Sharbati grains grown exclusively in Gir forest eco-soils. Grinded on traditional riverbed stones at under 40 RPM, keeping grain temperature cool and all essential B-vitamins, dietary fiber, and natural wheat germ oils intact. Produces exceptionally soft, sweet rotis naturally.",
     "harvestDate": "September 2026 Batch",

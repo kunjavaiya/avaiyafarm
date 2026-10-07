@@ -40,7 +40,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-800/90 border-emerald-600/50 text-emerald-200 text-[11px] sm:text-xs font-semibold backdrop-blur-xs"
             >
               <Sparkles className="size-3 text-amber-400" />
-              <span>100% PURE — ORGANIC DESI HARVEST</span>
+              <span>100% PURE — DESI HARVEST</span>
             </Badge>
 
             {/* Main Headline */}
@@ -50,7 +50,7 @@ export function HeroSection() {
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base lg:text-lg text-emerald-100/90 max-w-2xl font-normal leading-relaxed">
-              <span className="font-bold text-white">Avaiya Farm</span> — Bringing authentic stone-ground flours, wood-pressed oils, and sun-dried spices directly to your family&apos;s dining table.
+              <span className="font-bold text-white">Avaiya Farm</span> — Fresh, shuddha masalas made from pure spices, straight from our farm to your kitchen.
             </p>
 
             {/* Feature Pills */}

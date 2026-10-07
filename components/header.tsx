@@ -72,7 +72,7 @@ export function Header() {
               className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/80 text-secondary-foreground text-xs font-semibold border-border"
             >
               <Sprout className="size-3.5 text-emerald-600 dark:text-emerald-400" />
-              <span>Gir Eco-Soils</span>
+              <span>Saurashtra Eco-Soils</span>
             </Badge>
             <Badge
               variant="outline"
@@ -80,13 +80,6 @@ export function Header() {
             >
               <ShieldCheck className="size-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>Chemical-Free</span>
-            </Badge>
-            <Badge
-              variant="outline"
-              className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/80 text-secondary-foreground text-xs font-semibold border-border"
-            >
-              <Sun className="size-3.5 text-amber-500" />
-              <span>Vedic Chakki Milled</span>
             </Badge>
           </div>
 

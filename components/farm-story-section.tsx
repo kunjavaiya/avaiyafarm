@@ -39,14 +39,7 @@ export function FarmStorySection() {
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-semibold border-white/20"
                   >
                     <CheckCircle className="size-3.5 text-emerald-400" />
-                    <span>Pure Organic</span>
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-semibold border-white/20"
-                  >
-                    <CheckCircle className="size-3.5 text-amber-400" />
-                    <span>Vedic Slow Milling</span>
+                    <span>Pure Desi Harvest</span>
                   </Badge>
                 </div>
 
@@ -57,7 +50,7 @@ export function FarmStorySection() {
                       AF
                     </div>
                     <div>
-                      <h4 className="font-bold text-xs sm:text-sm">Gir & Saurashtra Heritage</h4>
+                      <h4 className="font-bold text-xs sm:text-sm">Saurashtra Heritage</h4>
                       <p className="text-[11px] text-muted-foreground">Authentic Native Seed Cultivation</p>
                     </div>
                   </div>
@@ -78,15 +71,15 @@ export function FarmStorySection() {
             </Badge>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground font-heading leading-tight">
-              Our Journey: Directly from our sunlit fields to your family&apos;s table.
+              Our Journey : From Pure Farms to Your Kitchen Freshness you can taste. Purity you can trust.
             </h2>
 
             <div className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
               <p>
-                <strong className="text-foreground">Avaiya Farm</strong> is rooted in traditional natural agriculture in Gujarat. Every grain is grown with regenerative natural cow-based composting (Jeevamrut), nourished by pure well-water, and sun-cured naturally on cotton sheets under open Gujarat skies.
+                <strong className="text-foreground">Avaiya Farm</strong> brings the goodness of naturally grown ingredients directly from the farm to your kitchen. We carefully select quality spices and prepare <strong className="text-foreground">fresh, shuddha masalas</strong> while keeping their natural taste, aroma, and freshness intact.
               </p>
               <p>
-                We never use high-speed roller mills or chemical refining. Our stone-chakki runs at ultra-low speeds (&lt;40 RPM) and oils are pressed in wooden kolhu ghanis so delicate natural enzymes, vitamins, and authentic aromas remain completely alive.
+                We believe real food doesn't need artificial food colours or unnecessary additives. Our masalas are made with <strong className="text-foreground">carefully selected ingredients, traditional methods, and a focus on purity</strong>—so every spoon brings authentic flavour to your family's meals.
               </p>
             </div>
 
@@ -97,9 +90,9 @@ export function FarmStorySection() {
                   <span className="text-2xl sm:text-3xl font-black text-emerald-700 dark:text-emerald-400">
                     100%
                   </span>
-                  <span className="text-xs font-bold text-foreground">Traceable Harvest</span>
+                  <span className="text-xs font-bold text-foreground">Fresh & Shuddha</span>
                   <span className="text-[11px] text-muted-foreground">
-                    Gir Somnath single-origin farmlands.
+                    Freshly prepared masalas with carefully selected ingredients.
                   </span>
                 </CardContent>
               </Card>
@@ -107,11 +100,10 @@ export function FarmStorySection() {
               <Card className="p-4 rounded-2xl bg-card border border-border flex flex-col gap-1 shadow-2xs py-4">
                 <CardContent className="p-0 flex flex-col gap-1">
                   <span className="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-400">
-                    24 Hrs
+                    Farm → Kitchen
                   </span>
-                  <span className="text-xs font-bold text-foreground">Fresh Milling Cycle</span>
                   <span className="text-[11px] text-muted-foreground">
-                    Slow-ground and dispatched fresh.
+                    A direct journey from our farm and trusted sources to your family kitchen.
                   </span>
                 </CardContent>
               </Card>

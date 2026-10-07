@@ -17,12 +17,6 @@ export function TrustHighlights() {
       iconBg: "bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300",
     },
     {
-      icon: Sparkles,
-      title: "Traditional Stone Milling",
-      description: "Cold Vedic chakki & wood kolhu press to preserve vital germ vitamins.",
-      iconBg: "bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300",
-    },
-    {
       icon: Truck,
       title: "Safe & Fresh Delivery",
       description: "Airtight eco-packaging with door delivery across cities and towns.",
@@ -32,7 +26,7 @@ export function TrustHighlights() {
 
   return (
     <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 -mt-4 sm:-mt-8 relative z-20 w-full">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3">
         {highlights.map((item, index) => {
           const Icon = item.icon
           return (

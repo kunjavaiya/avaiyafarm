@@ -33,9 +33,7 @@ export function Footer() {
               </div>
             </div>
 
-            <p className="text-xs text-emerald-200/80 leading-relaxed max-w-sm">
-              Authentic slow-milled stone-ground flours, wood kolhu virgin oils, and pure unadulterated spices delivered straight from our Gujarat family farmlands to your dining table.
-            </p>
+            <p className="text-xs text-emerald-200/80 leading-relaxed max-w-sm">Freshly made shuddha masalas from carefully selected spices, with no artificial food colours or unnecessary additives. Pure taste and authentic aroma, delivered straight from our farm to your kitchen.</p>
 
             <div className="flex flex-col gap-2 pt-1 text-xs text-emerald-300">
               <a
